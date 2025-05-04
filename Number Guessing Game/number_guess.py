@@ -90,7 +90,7 @@ def play_game():
         except ValueError:
             print("Invalid input! Please enter a valid number.")
 
-    print(f"Sorry, you've run out of attempts! The correct number was {num_to_guess}.")
+    print(f"Sorry, you have run out of attempts! The correct number was {num_to_guess}.")
     return attempts
 
 
