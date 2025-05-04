@@ -94,6 +94,27 @@ def play_game():
     return attempts
 
 
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+
+def get_random_hint(answer):
+    hints = [
+        f"The number is {'even' if answer % 2 == 0 else 'odd'}.",
+        f"The number is {'a prime number' if is_prime(answer) else 'not a prime number'}.",
+        f"The number is {'divisible by 3' if answer % 3 == 0 else 'not divisible by 3'}.",
+        f"The number is {'divisible by 5' if answer % 5 == 0 else 'not divisible by 5'}.",
+        f"The number is {'greater' if answer > 50 else 'less'} than 50.",
+        f"The number is {'divisible by 7' if answer % 7 == 0 else 'not divisible by 7'}."
+    ]
+    return r.choice(hints)
+
+
 def main():
     """Runs the entire game and tracks the best score."""
     best_score = float('inf')  # Initialize the best score as infinity (best is the lowest number of attempts)
