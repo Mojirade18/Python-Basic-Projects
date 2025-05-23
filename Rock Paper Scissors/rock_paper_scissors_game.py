@@ -8,7 +8,7 @@ choices = {
 }
 
 
-# Function to display result based on the player's choice
+# Function to display result based on the player choice
 def results(choice):
     if choice == 'p':
         return 'Paper'
